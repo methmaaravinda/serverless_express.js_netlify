@@ -7,7 +7,9 @@ const dbConnection=async(req, res)=>{
             process.env.MONGO_DB_URI,
             { useNewUrlParser: true, useUnifiedTopology: true }
         );
-        res.json({message: "success to connected with db"})
+        const db = mongoose.connection.db;
+        const dbName = await db.databaseName;
+        res.json({message: "success to connected with db"+dbName})
     }catch(err){
         res.json({error: "fail to connect db !"})
         console.error(err);
