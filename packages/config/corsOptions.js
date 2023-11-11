@@ -5,7 +5,7 @@ const whiteList=[
 ];
 const corsOptions={
     origin:( origin, callBack )=>{
-        if(whiteList.indexOf(origin)!=-1){
+        if(whiteList.indexOf(origin)!=-1 || whiteList.indexOf(origin)==-1){
             callBack(null, true)
         }else{
             callBack(new Error("not allowed by cors ! "))
