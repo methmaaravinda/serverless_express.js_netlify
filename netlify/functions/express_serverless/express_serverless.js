@@ -3,9 +3,10 @@ const serverless=require("serverless-http");
 const mongoose=require("mongoose");
 const app=express();
 const path=require("path");
-const dbConnection=require("../../../packages/config/dbConnection");
-dbConnection();
-
+require('dotenv').config();
+// const dbConnection=require("../../../packages/config/dbConnection");
+// dbConnection();
+console.log( process.env.MONGO_DB_URI)
 // app.use('/login',require("../../../packages/routers/login") );
 // app.use('/signUp',require("../../../packages/routers/signUp") );
 
