@@ -4,8 +4,8 @@ const mongoose=require("mongoose");
 const app=express();
 const path=require("path");
 require('dotenv').config();
-// const dbConnection=require("../../../packages/config/dbConnection");
-// dbConnection();
+const dbConnection=require("../../../packages/config/dbConnection");
+dbConnection();
 // app.use('/login',require("../../../packages/routers/login") );
 app.use('/signUp',require("../../../packages/routers/signUp") );
 
