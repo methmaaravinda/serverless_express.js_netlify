@@ -11,7 +11,6 @@ router.route('/')
         const password=req.body?.user?.password;
         try{
             const findUser=await User.findOne({email,password}).exec();
-            console.log("find user : "+findUser);
             if(!findUser){
                 res.status(403).json({error:"invalid credentials"});
             }
@@ -52,7 +51,7 @@ router.route('/')
                         res.json({error:"error update user with accesstoken and r token.. "+err})
                     }
                 }catch(err){
-                    res.status(500).json({error:"server error-token generation"})
+                    res.status(500).json({message:"server error-token generation", err})
                 }
             }
         }catch(err){
