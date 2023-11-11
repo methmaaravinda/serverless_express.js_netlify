@@ -1,0 +1,4 @@
+[[redirects]]
+    to="/.netlify/functions/express_serverless/:splat"
+    from="/*"
+    status=200
