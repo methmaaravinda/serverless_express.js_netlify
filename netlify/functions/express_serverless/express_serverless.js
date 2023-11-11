@@ -9,7 +9,7 @@ dbConnection();
 
 app.use(express.json())
 app.use(cors(require("../../../packages/config/corsOptions")))
-// app.use('/login',require("../../../packages/routers/login") );
+app.use('/login',require("../../../packages/routers/login") );
 app.use('/signUp',require("../../../packages/routers/signUp") );
 
 
