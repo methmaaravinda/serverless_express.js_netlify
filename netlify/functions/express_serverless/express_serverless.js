@@ -2,10 +2,12 @@ const express=require("express");
 const serverless=require("serverless-http");
 const mongoose=require("mongoose");
 const app=express();
-const path=require("path");
 require('dotenv').config();
+const cors=require("cors");
 const dbConnection=require("../../../packages/config/dbConnection");
 dbConnection();
+
+app.use(cors(require("../../../packages/config/corsOptions")))
 // app.use('/login',require("../../../packages/routers/login") );
 app.use('/signUp',require("../../../packages/routers/signUp") );
 
