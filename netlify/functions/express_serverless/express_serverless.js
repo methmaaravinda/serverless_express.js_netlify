@@ -3,11 +3,11 @@ const serverless=require("serverless-http");
 const mongoose=require("mongoose");
 const app=express();
 const path=require("path");
-// const dbConnection=require("../../../packages/config/dbConnection");
-// dbConnection();
+const dbConnection=require("../../../packages/config/dbConnection");
+dbConnection();
 
-app.use('/login',require("../../../packages/routers/login") );
-app.use('/signUp',require("../../../packages/routers/signUp") );
+// app.use('/login',require("../../../packages/routers/login") );
+// app.use('/signUp',require("../../../packages/routers/signUp") );
 
 
 module.exports.handler = serverless(async (event, context) => {
