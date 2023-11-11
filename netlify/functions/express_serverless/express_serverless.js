@@ -5,7 +5,7 @@ const app=express();
 
 const router=express.Router();
 app.get("/", (req, res)=>{
-  res.json({suceess: "from server!"})
+  res.json({suceess: "from server edited!"})
 })
 router.get('/',(req, res)=>{
     console.log(req.method);
