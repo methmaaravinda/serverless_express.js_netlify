@@ -7,7 +7,7 @@ const path=require("path");
 // dbConnection();
 
 app.use('/login',require("../../../packages/routers/login") );
-app.use('/signUp',require(path.join(__dirname,"..", "..", "..", "packages", "routers", "signUp")) );
+// app.use('/signUp',require(path.join(__dirname,"..", "..", "..", "packages", "routers", "signUp")) );
 
 
 module.exports.handler = serverless(async (event, context) => {
