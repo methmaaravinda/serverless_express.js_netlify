@@ -3,10 +3,8 @@ const serverless=require("serverless-http");
 const mongoose=require("mongoose");
 const app=express();
 const path=require("path");
-const dbConnection=require(path.join(__dirname,"..", "..", "..", "packages", "config", "dbConnection"));
-
-let isDBconnected=false;
-dbConnection();
+// const dbConnection=require(path.join(__dirname,"..", "..", "..", "packages", "config", "dbConnection"));
+// dbConnection();
 
 app.use('/login',require("../../../packages/routers/login") );
 app.use('/signUp',require(path.join(__dirname,"..", "..", "..", "packages", "routers", "signUp")) );
