@@ -26,6 +26,7 @@ router.route('/')
                         process.env.REFRESH_TOKEN_SECRET, 
                         {expiresIn:10*60}
                     )
+                    console.log("signed Refresh Token :"+refreshToken);
                     try{
                         const updateUser=await User.findOneAndUpdate(
                             {email, password},
