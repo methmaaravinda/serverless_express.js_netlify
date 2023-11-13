@@ -19,7 +19,7 @@ router.route('/')
                     const accessToken=jwt.sign(
                         {email}, 
                         process.env.ACCESS_TOKEN_SECRET, 
-                        {expiresIn:10}
+                        {expiresIn:20}
                     )
                     const refreshToken=jwt.sign(
                         {email}, 
