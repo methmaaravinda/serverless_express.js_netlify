@@ -4,10 +4,12 @@ const mongoose=require("mongoose");
 const app=express();
 require('dotenv').config();
 const cors=require("cors");
+const cookieParser=require("cookie-parser");
 const dbConnection=require("../../../packages/config/dbConnection");
 dbConnection();
 
 app.use(express.json());
+app.use(cookieParser());
 app.use(cors(require("../../../packages/config/corsOptions")));
 app.use('/login',require("../../../packages/routers/login") );
 app.use('/signUp',require("../../../packages/routers/signUp") );
