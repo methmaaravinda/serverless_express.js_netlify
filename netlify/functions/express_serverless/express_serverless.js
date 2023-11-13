@@ -7,10 +7,11 @@ const cors=require("cors");
 const dbConnection=require("../../../packages/config/dbConnection");
 dbConnection();
 
-app.use(express.json())
-app.use(cors(require("../../../packages/config/corsOptions")))
+app.use(express.json());
+app.use(cors(require("../../../packages/config/corsOptions")));
 app.use('/login',require("../../../packages/routers/login") );
 app.use('/signUp',require("../../../packages/routers/signUp") );
+app.use('/refreshToken', require("../../../packages/routers/refreshToken") );
 
 
 module.exports.handler = serverless(async (event, context) => {
