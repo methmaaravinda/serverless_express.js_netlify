@@ -5,3 +5,5 @@ router.route("/")
     .get((req, res)=>{
         res.json({msg: "pass the verify middleware !"})
     })
+
+module.exports=router;
