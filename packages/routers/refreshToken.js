@@ -17,6 +17,7 @@ router.route("/")
             }
             if(verifyUser){
                 try{
+                    console.log("refreshSecret : "+process.env.REFRESH_TOKEN_SECRET)
                     const decode=jwt.verify(
                         refreshToken,
                         process.env.REFRESH_TOKEN_SECRET
@@ -38,7 +39,7 @@ router.route("/")
                         accessToken
                     })
                 }catch(err){
-                    res.status(403).json({error: "invalid refresh token"})
+                    res.status(403).json({errorMessage: "invalid refresh token", error: err})
                 }
             }
         }catch(err){
