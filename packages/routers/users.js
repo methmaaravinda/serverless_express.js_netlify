@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Profile = require("../model/ProfileModel");
 
-router.route("/")
+router.route("/:id")
   .post(async (req, res) => {
     const id = Number(req.params.id);
 
