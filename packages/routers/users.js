@@ -2,19 +2,22 @@ const express = require("express");
 const router = express.Router();
 const Profile = require("../model/ProfileModel");
 
-router.route("/:id")
-  .post(async (req, res) => {
-    const id = Number(req.params.id);
+router.route("/:page")
+  .get(async (req, res) => {
+    const page = Number(req.params.page);
 
-    if (isNaN(id)) {
-      return res.json({ error: "params not valid!" , params: id});
+    if (isNaN(page) || page < 1) {
+      return res.json({ error: "Invalid page number!" });
     }
 
+    const itemsPerPage = 6;
+    const skip = (page - 1) * itemsPerPage;
+
     try {
-      const profiles = await Profile.find().sort({ createdAt: -1 }).limit(6 * id);
+      const profiles = await Profile.find().sort({ createdAt: -1 }).skip(skip).limit(itemsPerPage);
       res.json({ profiles });
     } catch (err) {
-      res.status(500).json({ error_msg: "error finding profiles!", error: err });
+      res.status(500).json({ error_msg: "Error finding profiles!", error: err });
     }
   });
 
