@@ -7,7 +7,7 @@ router.route("/")
     const id = Number(req.params.id);
 
     if (isNaN(id)) {
-      return res.json({ error: "params not valid!" });
+      return res.json({ error: "params not valid!" , params: id});
     }
 
     try {
