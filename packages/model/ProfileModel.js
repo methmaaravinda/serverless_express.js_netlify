@@ -7,7 +7,7 @@ const ProfileSchema=new mongoose.Schema(
         last_name: String,
         avatar: String
     },
-    {collation: "profile"}
+    {collection: "profile"}
 );
 
 const Profile=mongoose.model('Profile', ProfileSchema);
