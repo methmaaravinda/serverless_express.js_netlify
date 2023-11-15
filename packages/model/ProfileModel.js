@@ -6,7 +6,8 @@ const ProfileSchema=new mongoose.Schema(
         first_name: String,
         last_name: String,
         avatar: String
-    }
+    },
+    {collation: "profile"}
 );
 
 const Profile=mongoose.model('Profile', ProfileSchema);
