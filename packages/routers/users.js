@@ -15,7 +15,8 @@ router.route("/:page")
 
     try {
       const profiles = await Profile.find().sort({ createdAt: -1 }).skip(skip).limit(itemsPerPage);
-      res.json({ profiles });
+      const count=await Profile.countDocuments();
+      res.json({ profiles, count });
     } catch (err) {
       res.status(500).json({ error_msg: "Error finding profiles!", error: err });
     }
