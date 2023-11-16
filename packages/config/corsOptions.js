@@ -1,7 +1,7 @@
 const whiteList=[
     "http://localhost:3001", 
     "http://192.168.8.119:3001", 
-    "https://startling-cactus-bb2189.netlify.app"
+    "https://react-jwt-pagination.netlify.app"
 ];
 const corsOptions={
     origin:( origin, callBack )=>{
